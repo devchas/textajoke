@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Text-A-Joke</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='send_sms.css') }}" />
+	<script src="{{ url_for('static', filename='jquery-2.2.0.min.js') }}"></script>
+</head>
+<body>
+	<div id="headBox"><h1>Text Me a Joke!</h1></div>
+	<div id="bodyBox">
+		<h3>Enter your phone number below to receive a joke via text</h3>
+		<form name="numForm" onsubmit="return validateForm()" action="http://127.0.0.1:5000/send" method="post">
+			<fieldset>
+				<legend>Your Number</legend>
+				Enter Your Phone Number:<br>
+				<input type="text" name="number" id="numClass" size="28" placeholder="(000) 000-0000"><br>
+				<input id="submit" type="submit" value="Submit">
+			</fieldset>
+		</form>
+		<img src="{{ url_for('static', filename='monkey.jpg') }}" id="monkey" />
+	</div>
+
+</body>
+
+</html>
+
+<script src="{{ url_for('static', filename='send_sms.js') }}"></script>
